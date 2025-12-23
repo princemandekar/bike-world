@@ -1,0 +1,175 @@
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bike World</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("background.jpg") no-repeat center center / cover;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: rgba(0,0,0,0.85);
+    text-align: center;
+    padding: 12px;
+}
+
+/* SECTION */
+.section {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+/* TEXT */
+h2 {
+    font-size: 30px;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+}
+
+p, .caption {
+    font-size: 20px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+/* VIDEO */
+.video-box video {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 15px;
+	margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+/* LOGO GRID */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+/* LOGO BOX (same size for all) */
+.logo-box {
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.logo-box img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* BUTTON */
+.main-link {
+    margin-top: 40px;
+}
+
+.main-link a {
+    background: #004e92;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+/* video or line space*/
+.caption {
+    margin-top: 20px;
+	margin-bottom: 30px;
+	}
+</style>
+</head>
+
+<body>
+<script>
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href = "login.html";
+}
+</script>
+
+<header>
+    <h1>🏍 Bike World</h1>
+    <p>Best Bikes Collection</p>
+</header>
+
+<div class="section">
+
+    <h2>!! Welcome to Bike World !!</h2>
+    <p>Here you will find the best information about all bikes and scooters.</p>
+
+    <div class="video-box">
+        <video controls>
+            <source src="bike video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="caption"> <b> 👇 Click on bike logos for details 👇 </b></div>
+
+    <div class="logo-grid" id="logoGrid">
+        <a href="https://www.royalenfield.com/" target="_blank" class="logo-box"><img src="royal.jpg"></a>
+        <a href="https://www.yamaha-motor-india.com/" target="_blank" class="logo-box"><img src="yamaha.jpg"></a>
+        <a href="https://www.bikewale.com/hero-bikes/" target="_blank" class="logo-box"><img src="hero.jpg"></a>
+        <a href="https://www.bikewale.com/honda-bikes/" target="_blank" class="logo-box"><img src="honda.jpg"></a>
+        <a href="https://www.bikewale.com/kawasaki-bikes/" target="_blank" class="logo-box"><img src="kawasaki.jpg"></a>
+        <a href="https://www.bikewale.com/bmw-bikes/" target="_blank" class="logo-box"><img src="bmw.jpg"></a>
+        <a href="https://www.bikewale.com/jawa-bikes/" target="_blank" class="logo-box"><img src="jawa.jpg"></a>
+        <a href="https://www.ktmindia.com/ktm-bikes" target="_blank" class="logo-box"><img src="ktm.jpg"></a>
+        <a href="https://www.bikewale.com/ducati-bikes/" target="_blank" class="logo-box"><img src="ducati.jpg"></a>
+    </div>
+
+    <div class="main-link">
+        <a href="https://www.bikewale.com/" target="_blank">
+            👉 Click <b>HERE</b> for details of other bikes 👈
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© princemandekar627@gmail.com</p>
+	
+	<b>(Prince Mandekar)</b>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+/* JavaScript to ensure all logos load properly */
+const logos = document.querySelectorAll(".logo-box img");
+
+logos.forEach(logo => {
+    logo.addEventListener("error", () => {
+        logo.style.display = "none";
+    });
+});
+</script>
+
+</body>
+</html>
